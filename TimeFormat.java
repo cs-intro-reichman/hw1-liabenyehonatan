@@ -14,20 +14,20 @@ public class TimeFormat {
 		int minutes = Integer.parseInt("" + args[0].charAt(3) + args[0].charAt(4));
 
 		String AmPm = "";
-		if (hours >= 00 && hours <= 11) {
+
+		if (hours >= 0 && hours <= 11) {
 			AmPm = "AM";
 		} else if (hours >= 12 && hours <= 23) {
 			AmPm = "PM";
 		}
-
-		if (hours >= 12 && hours <= 23) {
+		if (hours >= 13 && hours <= 23) {
 			hours = hours - 12;
 		}
 
 		if (hours < 10 && minutes < 10) {
-			System.out.println("0" + hours + ":0" + minutes + " " + AmPm);
+			System.out.println(hours + ":0" + minutes + " " + AmPm);
 		} else if (hours < 10 && minutes >= 10) {
-			System.out.println("0" + hours + ":" + minutes + " " + AmPm);
+			System.out.println(hours + ":" + minutes + " " + AmPm);
 		} else if (minutes < 10 && hours >= 10) {
 			System.out.println(hours + ":0" + minutes + " " + AmPm);
 		}
